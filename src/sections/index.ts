@@ -1,0 +1,9 @@
+export { Hero } from "./Hero";
+export { Framework } from "./Framework";
+export { Services } from "./Services";
+export { Features } from "./Features";
+export { ClientLogos } from "./ClientLogos";
+export { Pricing } from "./Pricing";
+export { WhyUs } from "./WhyUs";
+export { CTA } from "./CTA";
+export { Footer } from "./Footer";

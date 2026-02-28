@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="YAZHL favicon">
+  <defs>
+    <linearGradient id="brand" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7F5AF0" />
+      <stop offset="1" stop-color="#FF6AC2" />
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#brand)" />
+  <text
+    x="32"
+    y="34"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-size="34"
+    font-family="Poppins, Arial, sans-serif"
+    font-weight="800"
+    fill="#ffffff"
+  >
+    Y
+  </text>
+</svg>
