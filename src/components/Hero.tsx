@@ -43,7 +43,7 @@ export const Hero = () => {
 
       <Container className="relative z-10">
         {/* Two-column grid: left = text, right = snapshot card */}
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center">
 
           {/* ── Left column ── */}
           <motion.div
@@ -64,10 +64,10 @@ export const Hero = () => {
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl xl:text-7xl"
+              className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.25rem] xl:text-6xl"
             >
-              <span className="block">Your Growth Partner for</span>
-              <span className="block">
+              <span className="block lg:whitespace-nowrap">Your Growth Partner for</span>
+              <span className="block lg:whitespace-nowrap">
                 <GradientText
                   colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
                   animationSpeed={8}
@@ -77,7 +77,7 @@ export const Hero = () => {
                   Visibility That Converts
                 </GradientText>
               </span>
-              <span className="block">Marketing That Sells.</span>
+              <span className="block lg:whitespace-nowrap">Marketing That Sells.</span>
             </motion.h1>
 
             {/* Sub-copy */}

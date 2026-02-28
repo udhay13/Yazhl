@@ -124,7 +124,7 @@ export const ClientLogos = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-xl"
+            className="flex max-w-xl flex-col items-center text-center md:items-start md:text-left"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#6B7280]">Social Proof Impact</p>
             <h2 className="mt-5 text-4xl font-bold uppercase leading-[1.05] tracking-tight text-balance text-[#111827] md:text-6xl">
@@ -135,7 +135,7 @@ export const ClientLogos = () => {
               engagement, and measurable growth.
             </p>
 
-            <ul className="mt-7 space-y-3">
+            <ul className="mt-7 flex flex-col items-center space-y-3 md:items-start">
               <li className="inline-flex items-center gap-3 rounded-full border border-[#E5E7EB] bg-white px-4 py-2 text-sm font-semibold text-[#111827] shadow-sm">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#7C3AED]" />
                 Generated over <span className="text-[#7C3AED]">1M+ views</span>
@@ -146,7 +146,7 @@ export const ClientLogos = () => {
               </li>
             </ul>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex items-center justify-center gap-4 md:justify-start">
               <a
                 href="#contact"
                 className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#111827] px-7 text-sm font-bold uppercase tracking-[0.08em] text-white"
