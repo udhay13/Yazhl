@@ -33,7 +33,7 @@ const Walkathon = () => {
   };
 
   return (
-    <PageTransition className="min-h-[100svh] h-[100dvh] overflow-hidden bg-[#020205]">
+    <PageTransition className="h-[100svh] overflow-hidden bg-[#020205]">
       <main className="relative h-full">
         <div className="pointer-events-none absolute inset-0 z-0">
           <Hyperspeed effectOptions={hyperspeedPresets.one} />
@@ -41,12 +41,12 @@ const Walkathon = () => {
         </div>
 
         <section className="relative h-full">
-          <Container className="relative z-10 flex h-full justify-center px-0 lg:px-8">
+          <Container className="relative z-10 flex h-full items-start justify-center px-3 pt-3 pb-3 sm:items-center sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mx-auto flex h-full w-full flex-col justify-between gap-4 rounded-none border border-white/20 bg-black/62 p-3 shadow-none backdrop-blur-xl sm:p-5 md:p-6 lg:grid lg:h-auto lg:max-w-6xl lg:grid-cols-[1.18fr_1fr] lg:gap-5 lg:rounded-[1.5rem] lg:p-8 lg:shadow-[0_20px_60px_rgba(2,6,23,0.55)] lg:items-center"
+              className="mx-auto grid w-full max-w-6xl gap-4 rounded-[1.5rem] border border-white/20 bg-black/62 p-3 shadow-[0_20px_60px_rgba(2,6,23,0.55)] backdrop-blur-xl sm:gap-5 sm:p-6 md:p-8 lg:grid-cols-[1.18fr_1fr] lg:items-center"
             >
               <div className="text-center lg:text-left">
                 <h1 className="text-xl font-black uppercase tracking-[0.14em] text-[#C4B5FD] sm:text-4xl md:text-5xl">
