@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { CalendarDays, Clock3, MapPin, Ticket } from "lucide-react";
+import { Container } from "@/components/Container";
 import Hyperspeed from "@/components/Hyperspeed";
 import { hyperspeedPresets } from "@/components/HyperSpeedPresets";
 import { PageTransition } from "@/components/PageTransition";
@@ -32,21 +33,22 @@ const Walkathon = () => {
   };
 
   return (
-    <PageTransition className="fixed inset-0 overflow-hidden bg-[#020205]">
-      <main className="absolute inset-0">
+    <PageTransition className="min-h-[100svh] h-[100dvh] overflow-hidden bg-[#020205]">
+      <main className="relative h-full">
         <div className="pointer-events-none absolute inset-0 z-0">
           <Hyperspeed effectOptions={hyperspeedPresets.one} />
           <div className="absolute inset-0 bg-black/35" />
         </div>
 
-        <section className="absolute inset-0 z-10 p-0 lg:p-6">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto flex h-full w-full flex-col justify-between gap-4 rounded-none border border-white/20 bg-black/62 p-3 shadow-none backdrop-blur-xl pt-[max(env(safe-area-inset-top),0.75rem)] pb-[max(env(safe-area-inset-bottom),0.75rem)] sm:p-5 md:p-6 lg:grid lg:h-full lg:max-w-6xl lg:grid-cols-[1.18fr_1fr] lg:gap-5 lg:rounded-[1.5rem] lg:border lg:border-white/20 lg:p-8 lg:shadow-[0_20px_60px_rgba(2,6,23,0.55)] lg:items-center"
-          >
-            <div className="text-center lg:text-left">
+        <section className="relative h-full">
+          <Container className="relative z-10 flex h-full justify-center px-0 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mx-auto flex h-full w-full flex-col justify-between gap-4 rounded-none border border-white/20 bg-black/62 p-3 shadow-none backdrop-blur-xl sm:p-5 md:p-6 lg:grid lg:h-auto lg:max-w-6xl lg:grid-cols-[1.18fr_1fr] lg:gap-5 lg:rounded-[1.5rem] lg:p-8 lg:shadow-[0_20px_60px_rgba(2,6,23,0.55)] lg:items-center"
+            >
+              <div className="text-center lg:text-left">
                 <h1 className="text-xl font-black uppercase tracking-[0.14em] text-[#C4B5FD] sm:text-4xl md:text-5xl">
                   VAADI RASATHI
                 </h1>
@@ -70,23 +72,24 @@ const Walkathon = () => {
                 >
                   [ REGISTER NOW ]
                 </button>
-            </div>
+              </div>
 
-            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-              {highlights.map(({ icon: Icon, label, value }) => (
-                <div
-                  key={label}
-                  className="rounded-xl border border-white/20 bg-black/55 p-2.5 text-left shadow-[0_10px_24px_rgba(2,6,23,0.3)] sm:p-3"
-                >
-                  <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#C4B5FD] sm:gap-2 sm:text-sm">
-                    <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                    <span>{label}</span>
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                {highlights.map(({ icon: Icon, label, value }) => (
+                  <div
+                    key={label}
+                    className="rounded-xl border border-white/20 bg-black/55 p-2.5 text-left shadow-[0_10px_24px_rgba(2,6,23,0.3)] sm:p-3"
+                  >
+                    <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#C4B5FD] sm:gap-2 sm:text-sm">
+                      <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                      <span>{label}</span>
+                    </div>
+                    <p className="mt-1.5 text-xs font-semibold text-white sm:mt-2 sm:text-base">{value}</p>
                   </div>
-                  <p className="mt-1.5 text-xs font-semibold text-white sm:mt-2 sm:text-base">{value}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </Container>
         </section>
 
       </main>
