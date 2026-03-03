@@ -28,7 +28,7 @@ export const Navbar = () => {
   const isScrolled = useScrollState(80);
   const isMobile = useIsMobile();
   const shouldShrinkWidth = isScrolled && !isMobile;
-  const useLightNav = isInHero;
+  const useLightNav = isInHero || location.pathname.startsWith("/walkathon");
 
   const sectionIds = useMemo(() => navLinks.filter((link) => link.href.startsWith("#")).map((link) => link.href), []);
 

@@ -4,6 +4,7 @@ import { CalendarDays, Clock3, MapPin, Ticket } from "lucide-react";
 import { Container } from "@/components/Container";
 import Hyperspeed from "@/components/Hyperspeed";
 import { hyperspeedPresets } from "@/components/HyperSpeedPresets";
+import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
 import { initializeMetaPixel } from "@/lib/metaPixel";
 
@@ -35,6 +36,7 @@ const Walkathon = () => {
 
   return (
     <PageTransition className="h-[100dvh] min-h-[100svh] overflow-hidden bg-[#020205]">
+      <Navbar />
       <main className="relative h-full">
         <div className="pointer-events-none absolute inset-0 z-0">
           <Hyperspeed effectOptions={hyperspeedPresets.one} />
@@ -49,7 +51,7 @@ const Walkathon = () => {
               transition={{ duration: 0.5 }}
               className="mx-auto grid h-full w-full max-w-6xl grid-rows-[1fr_auto] gap-4 rounded-[1.5rem] border border-white/20 bg-black/62 p-4 shadow-[0_20px_60px_rgba(2,6,23,0.55)] backdrop-blur-xl sm:gap-5 sm:p-6 md:p-8 lg:h-auto lg:grid-cols-[1.18fr_1fr] lg:grid-rows-none lg:items-center"
             >
-              <div className="self-center text-center lg:text-left">
+              <div className="mt-16 self-center text-center sm:mt-0 lg:text-left">
                 <h1 className="text-2xl font-black uppercase tracking-[0.14em] text-[#C4B5FD] sm:text-4xl md:text-5xl">
                   VAADI RASATHI
                 </h1>
