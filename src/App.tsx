@@ -17,6 +17,8 @@ import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
+import Walkathon from "@/pages/Walkathon";
+import WalkathonThankYou from "@/pages/WalkathonThankYou";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +67,8 @@ const AnimatedRoutes = () => {
         <Route path="/services/website-development" element={<WebsiteDevelopment />} />
         <Route path="/services/revenue-optimization-cro" element={<RevenueOptimization />} />
         <Route path="/services/video-production-creative-content" element={<VideoProduction />} />
+        <Route path="/walkathon" element={<Walkathon />} />
+        <Route path="/walkathon-thank-you" element={<WalkathonThankYou />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="*" element={<NotFound />} />
