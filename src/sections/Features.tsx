@@ -137,8 +137,8 @@ export const Features = () => {
           transition={{ duration: 0.45 }}
           className="mt-12 text-center"
         >
-          <Link
-            to="/#services"
+          <a
+            href="#services"
             className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-[#111111] px-8 text-sm font-bold uppercase tracking-[0.08em] text-white"
           >
             <span className="absolute inset-0 scale-0 rounded-full bg-white/20 transition-transform duration-500 group-hover:scale-[2.2]" />
@@ -146,7 +146,7 @@ export const Features = () => {
               Explore All Services
               <ArrowRight className="h-4 w-4" />
             </span>
-          </Link>
+          </a>
         </motion.div>
       </Container>
     </section>

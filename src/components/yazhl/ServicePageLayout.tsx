@@ -6,13 +6,14 @@ import { PageTransition } from "@/components/PageTransition";
 import { Container } from "@/components/Container";
 import { primaryButtonClasses } from "@/components/primaryButtonStyles";
 import { Footer } from "@/sections/Footer";
-import { openBookCallWhatsApp } from "@/lib/whatsapp";
+import { openWhatsAppWithMessage } from "@/lib/whatsapp";
 
 interface ServicePageLayoutProps {
   name: string;
   tagline: string;
   description: string;
   bullets: string[];
+  whatsappMessage?: string;
 }
 
 /* ─── Service-specific animated SVG illustrations ─────────────────────── */
@@ -365,7 +366,7 @@ const getServiceIllustration = (name: string) => {
 
 /* ─── Main component ──────────────────────────────────────────────────── */
 
-export const ServicePageLayout = ({ name, tagline, description, bullets }: ServicePageLayoutProps) => {
+export const ServicePageLayout = ({ name, tagline, description, bullets, whatsappMessage }: ServicePageLayoutProps) => {
   const navigate = useNavigate();
   const { component: IllustrationComponent, accent, chip } = getIllustrationConfig(name);
   const illustration = getServiceIllustration(name);
@@ -449,7 +450,11 @@ export const ServicePageLayout = ({ name, tagline, description, bullets }: Servi
               >
                 <button
                   type="button"
-                  onClick={openBookCallWhatsApp}
+                  onClick={() =>
+                    openWhatsAppWithMessage(
+                      whatsappMessage ?? `Hi YAZHL, I am interested in your "${name}" service.`,
+                    )
+                  }
                   className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-bold text-[#0F0F1A] shadow-xl transition-all hover:bg-violet-400 hover:text-white"
                 >
                   Book Strategy Call
@@ -614,14 +619,18 @@ export const ServicePageLayout = ({ name, tagline, description, bullets }: Servi
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <button
                 type="button"
-                onClick={openBookCallWhatsApp}
+                onClick={() =>
+                  openWhatsAppWithMessage(
+                    whatsappMessage ?? `Hi YAZHL, I am interested in your "${name}" service.`,
+                  )
+                }
                 className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-sm font-bold text-[#0F0F1A] shadow-xl transition-all hover:bg-violet-400 hover:text-white"
               >
                 Book Strategy Call
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
               <Link
-                to="/#services"
+                to="/services"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 px-8 text-sm font-bold text-white/80 backdrop-blur-sm transition-all hover:border-white/40 hover:text-white"
               >
                 View All Services

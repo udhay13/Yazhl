@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { PageTransition } from "@/components/PageTransition";
-import { CTA, ClientLogos, Features, Footer, Framework, Hero, Pricing, Services, WhyUs } from "@/sections";
+import { CTA, ClientLogos, Footer, Framework, Hero, Pricing, Services, WhyUs } from "@/sections";
 
 const Index = () => {
   const location = useLocation();
@@ -29,7 +29,6 @@ const Index = () => {
         <Framework />
         <ClientLogos />
         <Services />
-        <Features />
         <Pricing />
         <WhyUs />
         <CTA />

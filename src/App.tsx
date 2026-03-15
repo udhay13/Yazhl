@@ -13,12 +13,14 @@ import SocialMediaMarketing from "@/pages/services/SocialMediaMarketing";
 import WebsiteDevelopment from "@/pages/services/WebsiteDevelopment";
 import RevenueOptimization from "@/pages/services/RevenueOptimization";
 import VideoProduction from "@/pages/services/VideoProduction";
+import Services from "@/pages/Services";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import Walkathon from "@/pages/Walkathon";
 import WalkathonThankYou from "@/pages/WalkathonThankYou";
+import Contact from "@/pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +61,7 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Index />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/services/content-strategy-seo" element={<ContentStrategySEO />} />
         <Route path="/services/performance-marketing" element={<PerformanceMarketing />} />
         <Route path="/services/crm-automation" element={<CrmAutomation />} />
@@ -69,6 +72,7 @@ const AnimatedRoutes = () => {
         <Route path="/services/video-production-creative-content" element={<VideoProduction />} />
         <Route path="/walkathon" element={<Walkathon />} />
         <Route path="/walkathon-thank-you" element={<WalkathonThankYou />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="*" element={<NotFound />} />

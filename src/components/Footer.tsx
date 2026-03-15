@@ -30,18 +30,21 @@ export const Footer = () => {
   const location = useLocation();
 
   const onSectionClick = (href: string) => {
-    if (!href.startsWith("#")) {
+    if (href.startsWith("#")) {
+      if (location.pathname !== "/") {
+        navigate(`/${href}`);
+        return;
+      }
+
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
       return;
     }
 
-    if (location.pathname !== "/") {
-      navigate(`/${href}`);
-      return;
-    }
-
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+    if (href === "/contact") {
+      navigate("/contact");
     }
   };
 
@@ -83,24 +86,6 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Packages column */}
-          <div className="flex flex-col items-start">
-            <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#111111]">Packages</h4>
-            <ul className="mt-4 space-y-3">
-              {packageLinks.map((link) => (
-                <li key={`${link.label}-${link.href}`}>
-                  <button
-                    type="button"
-                    onClick={() => onSectionClick(link.href)}
-                    className="text-sm text-[#374151] transition-colors hover:text-[#7C3AED]"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Navigation column */}
           <div className="flex flex-col items-start">
             <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#111111]">Navigation</h4>
@@ -111,6 +96,33 @@ export const Footer = () => {
                     type="button"
                     onClick={() => onSectionClick(link.href)}
                     className="text-sm text-[#6B7280] transition-colors hover:text-[#7C3AED]"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onSectionClick("/contact")}
+                  className="text-sm text-[#6B7280] transition-colors hover:text-[#7C3AED]"
+                >
+                  Contact Us
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Packages column */}
+          <div className="flex flex-col items-start">
+            <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-[#111111]">Packages</h4>
+            <ul className="mt-4 space-y-3">
+              {packageLinks.map((link) => (
+                <li key={`${link.label}-${link.href}`}>
+                  <button
+                    type="button"
+                    onClick={() => onSectionClick(link.href)}
+                    className="text-sm text-[#374151] transition-colors hover:text-[#7C3AED]"
                   >
                     {link.label}
                   </button>

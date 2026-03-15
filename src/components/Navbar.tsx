@@ -14,9 +14,9 @@ const navLinks = [
   { href: "#framework", label: "Our Framework" },
   { href: "#who-we-are", label: "Who We Are" },
   { href: "#solutions", label: "Offerings" },
-  { href: "#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "#packages", label: "Packages" },
-  { href: "#results", label: "Why Us" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const Navbar = () => {

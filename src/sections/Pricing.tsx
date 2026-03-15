@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { Container } from "@/components/Container";
+import { getWhatsAppUrlWithMessage } from "@/lib/whatsapp";
 
 type PackageCard = {
   title: string;
@@ -11,6 +12,7 @@ type PackageCard = {
   cta: string;
   featured?: boolean;
   custom?: boolean;
+  whatsappMessage?: string;
 };
 
 const packages: PackageCard[] = [
@@ -25,6 +27,7 @@ const packages: PackageCard[] = [
     ],
     href: "#contact",
     cta: "Choose Starter",
+    whatsappMessage: "Hi YAZHL, I am interested in the Starter (Foundation) package.",
   },
   {
     title: "The Growth",
@@ -39,6 +42,7 @@ const packages: PackageCard[] = [
     href: "#contact",
     cta: "Choose Growth",
     featured: true,
+    whatsappMessage: "Hi YAZHL, I am interested in the Growth plan.",
   },
   {
     title: "Yazhl Elite",
@@ -53,6 +57,7 @@ const packages: PackageCard[] = [
     ],
     href: "#contact",
     cta: "Choose Elite",
+    whatsappMessage: "Hi YAZHL, I am interested in the Yazhl Elite (Scale) package.",
   },
   {
     title: "Customizable",
@@ -67,6 +72,7 @@ const packages: PackageCard[] = [
     href: "#contact",
     cta: "Contact Us",
     custom: true,
+    whatsappMessage: "Hi YAZHL, I would like to discuss a custom marketing package for my business.",
   },
 ];
 
@@ -139,7 +145,9 @@ export const Pricing = () => {
 
               <div className="mt-auto pt-8">
                 <a
-                  href={pkg.href}
+                  href={pkg.whatsappMessage ? getWhatsAppUrlWithMessage(pkg.whatsappMessage) : pkg.href}
+                  target={pkg.whatsappMessage ? "_blank" : undefined}
+                  rel={pkg.whatsappMessage ? "noopener noreferrer" : undefined}
                   className={`inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl text-sm font-semibold transition-all ${
                     pkg.featured
                       ? "bg-[#8B5CF6] text-white hover:bg-[#7C3AED]"

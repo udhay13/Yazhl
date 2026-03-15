@@ -101,18 +101,17 @@ export const Hero = () => {
                 Book Strategy Call
                 <ArrowRight className="h-4 w-4" />
               </button>
-              <button
-                type="button"
-                onClick={() => scrollToSection("#solutions")}
+              <a
+                href="/services"
                 className={primaryButtonClasses({
                   variant: "outline",
                   size: "lg",
                   className:
-                    "w-full sm:w-auto border-white/35 bg-transparent text-white hover:border-[#7C3AED] hover:bg-[#7C3AED]/10 hover:text-white",
+                    "w-full sm:w-auto border-white/35 bg-transparent text-white hover:border-[#7C3AED] hover:bg-[#7C3AED]/10 hover:text-white text-center",
                 })}
               >
-                Explore Solutions
-              </button>
+                Explore Services
+              </a>
             </motion.div>
 
             {/* Trust line */}
