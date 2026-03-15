@@ -13,29 +13,25 @@ const metrics = [
 const portfolioItems = [
   {
     title: "Luxury Skincare Reel",
-    image:
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80",
+    image: "/images/horiz5.jpeg",
     likes: "22K",
     comments: "640",
   },
   {
     title: "Startup Product Launch",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+    image: "/images/horiz4.jpeg",
     likes: "18K",
     comments: "510",
   },
   {
     title: "Hospitality Brand Story",
-    image:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+    image: "/images/horiz2.jpeg",
     likes: "15K",
     comments: "390",
   },
   {
     title: "Fashion Campaign Edit",
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80",
+    image: "/images/horiz3.jpeg",
     likes: "20K",
     comments: "560",
   },

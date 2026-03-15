@@ -8,24 +8,21 @@ const reelCards = [
     views: "420K",
     likes: "21K",
     comments: "1.8K",
-    image:
-      "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=800&q=80",
+    image: "/images/vertical1.jpeg",
   },
   {
     title: "@marketmove",
     views: "310K",
     likes: "15K",
     comments: "1.1K",
-    image:
-      "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80",
+    image: "/images/vertical3.jpeg",
   },
   {
     title: "@growthlabs",
     views: "270K",
     likes: "12K",
     comments: "920",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    image: "/images/Vertical5.jpeg",
   },
 ];
 

@@ -117,8 +117,8 @@ export const Navbar = () => {
           className={cn(
             "mx-auto flex h-16 w-full items-center justify-between rounded-2xl px-4 transition-all duration-300 ease-in-out sm:px-6",
             isScrolled
-              ? "border border-white/30 bg-white/20 shadow-md backdrop-blur-lg"
-              : "border border-white/30 bg-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.06)] backdrop-blur-md",
+              ? "border border-[#E5E7EB]/80 bg-white/20 shadow-md backdrop-blur-lg"
+              : "border border-[#E5E7EB]/80 bg-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.06)] backdrop-blur-md",
           )}
         >
           <button
