@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
+  Building2,
   Mail,
   MessageSquareText,
   Music,
+  Phone,
   Send,
   Sparkles,
   UserRound,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,23 +22,51 @@ type ContactProps = {
   compact?: boolean;
 };
 
+const EMAILJS_SERVICE_ID = "service_9lz2xcx";
+const EMAILJS_TEMPLATE_ID = "template_z9v2kkm";
+const EMAILJS_PUBLIC_KEY = "5KLg0znPiPC5d-XdF";
+
 export const Contact = ({ compact = false }: ContactProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const form = formRef.current;
+    const templateParams = {
+      from_name: (form.elements.namedItem("from_name") as HTMLInputElement)?.value ?? "",
+      from_email: (form.elements.namedItem("from_email") as HTMLInputElement)?.value ?? "",
+      phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value ?? "",
+      company: (form.elements.namedItem("company") as HTMLInputElement)?.value ?? "",
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)?.value ?? "",
+    };
 
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -128,6 +159,7 @@ export const Contact = ({ compact = false }: ContactProps) => {
               className="flex flex-1 flex-col"
             >
               <form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className="flex h-full flex-col rounded-[24px] border border-slate-200/80 bg-white/70 p-4 shadow-[0_18px_40px_rgba(148,163,184,0.16)] backdrop-blur-xl"
               >
@@ -140,7 +172,7 @@ export const Contact = ({ compact = false }: ContactProps) => {
                       <UserRound className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                       <Input
                         id="name"
-                        name="name"
+                        name="from_name"
                         required
                         placeholder="Your Name"
                         className="h-10 rounded-2xl border-slate-200 bg-white pl-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] focus:border-sky-300 focus:ring-sky-200"
@@ -156,10 +188,43 @@ export const Contact = ({ compact = false }: ContactProps) => {
                       <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                       <Input
                         id="email"
-                        name="email"
+                        name="from_email"
                         type="email"
                         required
                         placeholder="Email Address"
+                        className="h-10 rounded-2xl border-slate-200 bg-white pl-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] focus:border-sky-300 focus:ring-sky-200"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  <label htmlFor="phone" className="space-y-1.5">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      Phone
+                    </span>
+                    <div className="relative">
+                      <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+91 98765 43210"
+                        className="h-10 rounded-2xl border-slate-200 bg-white pl-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] focus:border-sky-300 focus:ring-sky-200"
+                      />
+                    </div>
+                  </label>
+
+                  <label htmlFor="company" className="space-y-1.5">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      Company
+                    </span>
+                    <div className="relative">
+                      <Building2 className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                      <Input
+                        id="company"
+                        name="company"
+                        placeholder="Your Company"
                         className="h-10 rounded-2xl border-slate-200 bg-white pl-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] focus:border-sky-300 focus:ring-sky-200"
                       />
                     </div>
@@ -231,6 +296,7 @@ export const Contact = ({ compact = false }: ContactProps) => {
               className="mx-auto max-w-xl"
             >
               <form
+                ref={formRef}
                 onSubmit={handleSubmit}
                 className="rounded-2xl border border-border bg-card p-4 shadow-soft md:p-6"
               >
@@ -241,7 +307,7 @@ export const Contact = ({ compact = false }: ContactProps) => {
                     </label>
                     <Input
                       id="name"
-                      name="name"
+                      name="from_name"
                       required
                       placeholder="John Doe"
                       className="h-12 border-border bg-background focus:border-primary"
@@ -253,7 +319,7 @@ export const Contact = ({ compact = false }: ContactProps) => {
                     </label>
                     <Input
                       id="email"
-                      name="email"
+                      name="from_email"
                       type="email"
                       required
                       placeholder="john@example.com"
