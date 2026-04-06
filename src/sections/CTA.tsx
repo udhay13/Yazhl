@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Container } from "@/components/Container";
 import { MinimalBackground } from "@/components/ui/minimal-background";
 import { WHATSAPP_BOOK_CALL_URL } from "@/lib/whatsapp";
@@ -49,12 +50,12 @@ export const CTA = () => {
                 </a>
               </div>
 
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 className="inline-flex h-12 w-full items-center justify-center rounded-full border border-[#CBD5E1] bg-white px-6 text-center text-sm font-bold uppercase tracking-[0.08em] text-[#0F172A]"
               >
                 Get a Free Consultation
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

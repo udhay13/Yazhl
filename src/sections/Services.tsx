@@ -3,9 +3,9 @@ import { ArrowRight, Play } from "lucide-react";
 import { Container } from "@/components/Container";
 
 const headlineLines = [
-  "CONVERSION-LED CREATIVE DIRECTION",
-  "TO MAKE SURE YOU GO VIRAL",
-  "AS WELL AS GROW YOUR BUSINESS",
+  "Creative Marketing strategies",
+  "that drive conversion",
+  "and grow your business",
 ];
 
 export const Services = () => {

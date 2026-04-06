@@ -18,11 +18,11 @@ const packageLinks = [
 ];
 
 const socialLinks = [
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  // { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/yazhl_connect?igsh=MWp0NHNjaDU5aDNudQ==", label: "Instagram" },
+  // { icon: Linkedin, href: "#", label: "LinkedIn" },
+  // { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61588273242903", label: "Facebook" },
 ];
 
 export const Footer = () => {
@@ -78,6 +78,8 @@ export const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#E5E7EB] text-[#6B7280] transition-colors hover:border-[#7C3AED] hover:text-[#7C3AED]"
                 >
                   <social.icon className="h-4 w-4" />

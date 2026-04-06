@@ -4,21 +4,18 @@ import { Container } from "@/components/Container";
 
 const reelCards = [
   {
-    title: "@brandlaunch",
     views: "420K",
     likes: "21K",
     comments: "1.8K",
     image: "/images/vertical1.jpeg",
   },
   {
-    title: "@marketmove",
     views: "310K",
     likes: "15K",
     comments: "1.1K",
     image: "/images/vertical3.jpeg",
   },
   {
-    title: "@growthlabs",
     views: "270K",
     likes: "12K",
     comments: "920",
@@ -45,7 +42,7 @@ export const ClientLogos = () => {
             <div className="grid grid-cols-3 gap-3 lg:gap-4">
               {reelCards.map((card, index) => (
                 <motion.article
-                  key={card.title}
+                  key={index}
                   initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
@@ -57,17 +54,14 @@ export const ClientLogos = () => {
                   {/* Full-bleed image */}
                   <img
                     src={card.image}
-                    alt={card.title}
+                    alt={`Reel ${index + 1}`}
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                   {/* Top badge */}
-                  <div className="absolute left-2.5 right-2.5 top-2.5 flex items-center justify-between">
-                    <span className="rounded-full bg-black/50 px-2 py-0.5 text-[10px] font-semibold text-white/90 backdrop-blur-sm">
-                      {card.title}
-                    </span>
+                  <div className="absolute left-2.5 right-2.5 top-2.5 flex items-center justify-end">
                     <span className="inline-flex items-center gap-0.5 rounded-full bg-black/50 px-2 py-0.5 text-[10px] font-bold text-white backdrop-blur-sm">
                       <Play className="h-2.5 w-2.5 fill-white" />
                       Reel

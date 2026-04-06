@@ -99,11 +99,8 @@ export const Contact = ({ compact = false }: ContactProps) => {
                     </div>
                   </div>
 
-                  <div className="relative h-24">
-                    <div className="absolute right-2 top-0 flex h-16 w-16 items-center justify-center rounded-[22px] border border-white/20 bg-white/10 backdrop-blur-md shadow-lg">
-                      <Mail className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="absolute left-0 top-5 w-24 rounded-2xl border border-white/20 bg-slate-950/15 p-3 backdrop-blur-md">
+                  <div className="flex flex-col items-start gap-3 justify-center">
+                    <div className="w-28 rounded-2xl border border-white/20 bg-slate-950/15 p-3 backdrop-blur-md">
                       <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/85">
                         <Sparkles className="h-3.5 w-3.5" />
                         Brief
@@ -114,7 +111,7 @@ export const Contact = ({ compact = false }: ContactProps) => {
                       </div>
                     </div>
 
-                    <div className="absolute bottom-0 left-0 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md">
                       <span className="h-2 w-2 rounded-full bg-emerald-300" />
                       Strategy synced
                     </div>
