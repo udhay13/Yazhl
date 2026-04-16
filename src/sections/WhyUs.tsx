@@ -12,25 +12,25 @@ const metrics = [
 
 const portfolioItems = [
   {
-    title: "Luxury Skincare Reel",
+    title: "Advanced Eye Care Campaign",
     image: "/images/horiz5.jpeg",
     likes: "22K",
     comments: "640",
   },
   {
-    title: "Startup Product Launch",
+    title: "Dermatology Awareness Campaign",
     image: "/images/horiz4.jpeg",
     likes: "18K",
     comments: "510",
   },
   {
-    title: "Hospitality Brand Story",
+    title: "General Medicine Awareness Campaign",
     image: "/images/horiz2.jpeg",
     likes: "15K",
     comments: "390",
   },
   {
-    title: "Fashion Campaign Edit",
+    title: "Women’s Health Awareness Campaign",
     image: "/images/horiz3.jpeg",
     likes: "20K",
     comments: "560",

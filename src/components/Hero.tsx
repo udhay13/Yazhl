@@ -114,23 +114,7 @@ export const Hero = () => {
               </a>
             </motion.div>
 
-            {/* Trust line */}
-            <motion.p variants={fadeUp} className="mt-4 text-sm text-white/65">
-              Trusted by 10+ Businesses | 60% Revenue Growth | 15hrs Saved Per Week
-            </motion.p>
 
-            {/* Stat boxes */}
-            <motion.dl
-              variants={fadeUp}
-              className="mt-10 grid w-full max-w-lg grid-cols-3 gap-3 lg:max-w-none lg:gap-6"
-            >
-              {stats.map((stat) => (
-                <div key={stat.label} className="rounded-xl border border-white/20 bg-white/5 p-4 text-center shadow-sm">
-                  <dt className="text-xs font-medium text-white/60 md:text-sm">{stat.label}</dt>
-                  <dd className="mt-2 text-xl font-bold text-white md:text-2xl">{stat.value}</dd>
-                </div>
-              ))}
-            </motion.dl>
           </motion.div>
 
           {/* ── Right column — Growth Snapshot card ── */}
@@ -138,7 +122,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.15 }}
-            className="mx-auto w-full max-w-[30rem] rounded-2xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm md:p-8 lg:mx-0 lg:ml-auto lg:mt-24"
+            className="mx-auto w-full max-w-[30rem] rounded-2xl border border-white/20 bg-white/10 p-6 shadow-sm backdrop-blur-sm md:p-8 lg:mx-0 lg:ml-auto lg:mt-12"
           >
             <div className="mb-4 flex items-center justify-between">
               <p className="text-sm font-semibold uppercase tracking-[0.12em] text-white/55">
@@ -172,6 +156,16 @@ export const Hero = () => {
                 <p className="mt-1.5 text-2xl font-bold text-white">+61%</p>
                 <p className="text-xs text-white/70">Ops automation</p>
               </div>
+            </div>
+
+            {/* Stats row */}
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-white/15 bg-white/5 p-3 text-center">
+                  <p className="text-lg font-bold text-white">{stat.value}</p>
+                  <p className="mt-0.5 text-[11px] font-medium text-white/55">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
 

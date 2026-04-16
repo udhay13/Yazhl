@@ -62,7 +62,12 @@ export const Services = () => {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="block"
+                className={`block ${index === 0
+                  ? "text-3xl font-normal sm:text-4xl md:text-5xl bg-gradient-to-r from-[#0A4A44] via-[#0d6b62] to-[#0A4A44] bg-clip-text text-transparent"
+                  : index === 1
+                    ? "text-3xl font-light sm:text-4xl md:text-5xl text-[#111111]"
+                    : "text-2xl font-light sm:text-3xl md:text-4xl text-[#4B5563]"
+                  }`}
               >
                 {line}
               </motion.span>
